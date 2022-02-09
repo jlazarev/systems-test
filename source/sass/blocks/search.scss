@@ -5,6 +5,10 @@
   min-height: 360px;
   color: $color-default-white;
 
+  @include retina {
+    background-image: url("../img/bg/pic_main@2x.jpg");
+  }
+
   @include viewport--800 {
     min-height: 215px;
   }

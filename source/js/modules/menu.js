@@ -1,7 +1,7 @@
-const header = document.querySelector('.header');
+// const header = document.querySelector('.header');
 const navToggle = document.querySelector('.header__menu-btn');
 const menu = document.querySelector('.header__menu');
-const body = document.querySelector('.page-body');
+// const body = document.querySelector('.page-body');
 
 navToggle.addEventListener('click', function () {
   if (menu.classList.contains('header__menu--open')) {

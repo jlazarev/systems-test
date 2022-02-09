@@ -17,4 +17,4 @@ accordions.forEach((el) => {
       content.style.height = content.scrollHeight + 'px';
     }
   });
-})
+});
