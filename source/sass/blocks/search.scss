@@ -1,0 +1,120 @@
+.search {
+  background-image: url("../img/bg/pic_main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 360px;
+  color: $color-default-white;
+
+  @include viewport--800 {
+    min-height: 215px;
+  }
+}
+
+.search__wrapper {
+  max-width: 1030px;
+  padding-top: 89px;
+
+  @include viewport--800 {
+    padding: 39px 19px 0;
+  }
+}
+
+.search__title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  padding-left: 1px;
+
+  @include viewport--800 {
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.search__form {
+  display: flex;
+  height: 60px;
+  margin-bottom: 11px;
+
+  @include viewport--800 {
+    position: relative;
+    height: 48px;
+    margin-bottom: 9px;
+  }
+
+  input {
+    flex-grow: 1;
+    margin-left: 1px;
+    border-radius: 8px;
+    border: 2px solid $color-blue-light;
+    padding: 0 22px;
+
+    @include viewport--800 {
+      border-radius: 4px;
+      padding: 0 55px 0 10px;
+    }
+
+    &::placeholder {
+      color: $color-default-black;
+      opacity: 0.46;
+    }
+  }
+
+  button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: inherit;
+    border: none;
+    border-radius: 8px;
+    background-color: $color-red;
+    padding: 0 32px;
+    margin-left: 18px;
+
+    &:hover {
+      background-color: $color-red-hover;
+    }
+
+    @include viewport--800 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 4px;
+      width: 48px;
+      height: 48px;
+      background-color: transparent;
+      padding: 0;
+      margin-left: 0;
+    }
+
+    span {
+      @include viewport--800 {
+        display: none;
+      }
+    }
+
+    svg {
+      display: none;
+
+      @include viewport--800 {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.search__description {
+  margin: 0;
+
+  @include viewport--800 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,271 @@
+.header {
+  display: block;
+  height: 68px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-default-white;
+  z-index: 10;
+  border-bottom: 1px solid $color-blue-light;
+
+  @include viewport--800 {
+    height: 48px;
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 5px 24px 4px;
+  max-width: none;
+
+  @include viewport--800 {
+    padding: 0 8px;
+  }
+}
+
+.header__logo {
+  margin-right: 37px;
+  margin-top: 4px;
+
+  @include viewport--800 {
+    margin-left: 8px;
+    margin-top: 5px;
+
+    svg {
+      width: 195px;
+      height: 30px;
+    }
+  }
+}
+
+.header__menu-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  order: -1;
+
+  &:hover {
+    &::before,
+    &::after,
+    .header__menu-top-line,
+    .header__menu-bottom-line {
+      background-color: $color-blue-hover;
+    }
+  }
+
+  @include viewport--800 {
+    order: 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30px;
+    height: 3px;
+    background-color: $color-blue;
+    transition: transform 0.5s;
+
+    @include viewport--800 {
+      width: 23px;
+    }
+  }
+
+  &--open {
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    .header__menu-top-line,
+    .header__menu-bottom-line {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+}
+
+.header__menu-top-line,
+.header__menu-bottom-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 3px;
+  background-color: $color-blue;
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+
+  @include viewport--800 {
+    width: 23px;
+  }
+}
+
+.header__menu-top-line {
+  transform: translateY(-10px);
+
+  @include viewport--800 {
+    transform: translateY(-7px);
+  }
+}
+
+.header__menu-bottom-line {
+  transform: translateY(10px);
+
+  @include viewport--800 {
+    transform: translateY(7px);
+  }
+}
+
+.header__menu {
+  position: absolute;
+  top: 68px;
+  left: -280px;
+  height: calc(100vh - 68px);
+  width: 280px;
+  background-color: rgba($color-default-white, 0.95);
+  padding: 20px;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.3s;
+
+  @include viewport--800 {
+    top: 48px;
+    left: auto;
+    right: -280px;
+  }
+
+  &--open {
+    transform: translateX(280px);
+    opacity: 1;
+
+    @include viewport--800 {
+      transform: translateX(-280px);
+    }
+  }
+}
+
+.header__menu-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 41px;
+}
+
+.header__menu-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 18px;
+}
+
+.header__menu-link {
+  color: $color-blue;
+  text-decoration: underline;
+  margin-bottom: 22px;
+
+  &:hover {
+    color: $color-grow;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.header__help {
+  margin-right: 2px;
+  margin-top: 6px;
+  color: $color-blue;
+
+  &:hover {
+    color: $color-grow;
+  }
+
+  @include viewport--800 {
+    display: none;
+  }
+}
+
+.header__popup {
+  position: absolute;
+  top: 54px;
+  right: 20px;
+  width: 241px;
+  height: 154px;
+  background-color: $color-default-white;
+  box-shadow: 0px 3px 12px rgba($color-default-black, 0.33);
+  animation: close 0.3s;
+  animation-fill-mode: forwards;
+  display: none;
+  padding: 20px 10px;
+  flex-direction: column;
+  align-items: center;
+
+  &--open {
+    display: flex;
+    animation: open 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    border: 10px solid $color-default-white;
+    border-top: 0;
+    border-left-color: $color-transparent;
+    border-right-color: $color-transparent;
+  }
+}
+
+.header__popup-phone {
+  margin-bottom: auto;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.header__popup-email {
+  font-weight: 600;
+  text-decoration: underline;
+  color: $color-blue;
+
+  &:hover {
+    color: $color-grow;
+  }
+}
+
+@keyframes open {
+  0% {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+}

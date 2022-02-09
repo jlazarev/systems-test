@@ -1,0 +1,11 @@
+.accordion .pay__box {
+  @include viewport--800 {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+}
+
+.accordion--open .pay__arrow {
+  transform: rotate(-180deg);
+}

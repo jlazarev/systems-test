@@ -1,0 +1,13 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+
+@mixin viewport--800 {
+  @media (max-width: $viewport--800 - 1) {
+    @content;
+  }
+}

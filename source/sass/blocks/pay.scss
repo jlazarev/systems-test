@@ -1,0 +1,237 @@
+.pay {
+  @include viewport--800 {
+    padding-top: 28px;
+  }
+}
+
+.pay__wrapper {
+  padding-top: 60px;
+
+  @include viewport--800 {
+    display: none;
+  }
+}
+
+.pay__title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  margin-bottom: 15px;
+}
+
+.pay__categories {
+  list-style: none;
+  padding: 0;
+  padding-left: 27px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto 7px;
+}
+
+.pay__category {
+  margin-right: 28px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.025em;
+
+  a {
+    color: $color-blue;
+    letter-spacing: 0;
+    position: relative;
+
+    &:hover {
+      color: $color-grow;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px dotted $color-grow;
+    }
+  }
+}
+
+.pay__title-mobile {
+  display: none;
+
+  @include viewport--800 {
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+}
+
+.pay__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pay__item {
+  padding-top: 60px;
+  border-bottom: 1px solid $color-blue-light;
+  padding-bottom: 50px;
+  min-height: 440px;
+
+  @include viewport--800 {
+    min-height: auto;
+    padding: 0;
+  }
+
+  &:last-child {
+    border: none;
+
+    @include viewport--800 {
+      border-bottom: 1px solid $color-blue-light;
+    }
+  }
+
+  &:nth-child(odd) .pay__img-block {
+    margin-left: 45px;
+  }
+
+  &:nth-child(even) {
+    .container {
+      flex-direction: row-reverse;
+
+      @include viewport--800 {
+        flex-direction: row;
+      }
+    }
+
+    .pay__img-block {
+      margin-right: 40px;
+    }
+  }
+
+  .container {
+    display: flex;
+  }
+}
+
+.pay__container {
+  @include viewport--800 {
+    padding: 0;
+  }
+}
+
+.pay__item-title {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 32px;
+  padding-top: 1px;
+  margin-bottom: 22px;
+
+  @include viewport--800 {
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-blue;
+    margin: 0;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  span {
+    @include viewport--800 {
+      border-bottom: 1px dotted $color-grow;
+      margin-right: auto;
+    }
+  }
+
+  svg {
+    display: none;
+
+    @include viewport--800 {
+      display: block;
+    }
+  }
+}
+
+.pay__icon {
+  margin-left: 14px;
+  margin-right: 20px;
+}
+
+.pay__arrow {
+  margin: 0 15px;
+  transition: 0.5s;
+}
+
+.pay__item-text {
+  @include viewport--800 {
+    width: 100%;
+  }
+}
+
+.pay__box {
+  @include viewport--800 {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.pay__text-block {
+  margin: 0;
+  margin-bottom: 35px;
+
+  @include viewport--800 {
+    margin-bottom: 22px;
+
+    &:last-child {
+      padding-bottom: 18px;
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      margin-top: 11px;
+    }
+  }
+
+  span {
+    display: block;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $color-blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-grow;
+    }
+  }
+}
+
+.pay__img-block {
+  width: 320px;
+  flex-shrink: 0;
+
+  @include viewport--800 {
+    display: none;
+  }
+}
+
+.pay__attention {
+  text-transform: uppercase;
+  color: $color-red;
+  font-weight: 700;
+}

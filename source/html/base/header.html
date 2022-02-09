@@ -1,0 +1,46 @@
+<header class="header @@if (context.mod) { header--@@mod }">
+  <div class="header__wrapper">
+    <a class="header__logo" @@if (!context.main) {href="index.html"} aria-label="Переход на главную">
+      <svg width="295" height="44" viewBox="0 0 295 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#icon-logo"></use>
+      </svg>
+    </a>
+
+    <button class="header__menu-btn" type="button" aria-label="меню">
+      <div class="header__menu-top-line"></div>
+      <div class="header__menu-bottom-line"></div>
+    </button>
+
+    <nav class="header__menu">
+      <div class="header__menu-block">
+        <div class="header__menu-title">Личный кабинет</div>
+
+        <a class="header__menu-link link-popup" href="#">Вход в Личный кабинет</a>
+      </div>
+
+      <div class="header__menu-block">
+        <div class="header__menu-title">Как это работает</div>
+
+        <a class="header__menu-link" href="#">Условия использования сервиса</a>
+
+        <a class="header__menu-link" href="#">Способы оплаты</a>
+
+        <a class="header__menu-link" href="#">Часто задаваемые вопросы</a>
+
+        <a class="header__menu-link" href="#">Служба поддержки</a>
+      </div>
+    </nav>
+
+    <a href="#" class="header__help" aria-label="поддержка">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#icon-ic_help"></use>
+      </svg>
+    </a>
+
+    <div class="header__popup">
+      <span class="header__popup-title">Тел. поддержки</span>
+      <a class="header__popup-phone" href="tel:88001234567">8 800 123-45-67</a>
+      <a class="header__popup-email" href="mailto:123@45.67">Написать письмо</a>
+    </div>
+  </div>
+</header>
